@@ -8,22 +8,22 @@ scores = [20]
 
 def start_game():
     solution = random.randrange(1, 21)
-    
+
     attempts = 1
     high_score = 21 - min(scores)
     print("High Score is  ", high_score, ", Higher is better" )
-   
 
-    
+
+
     while True:
         try:
             number_guessed = int(input("Please guess a number: "))
-            
+
             if (1 <= number_guessed < 21):
                 print("")
-            
+
             while  number_guessed != solution:
-                
+
                 attempts += 1
                 if number_guessed > solution:
                     print("It's lower")
@@ -34,7 +34,7 @@ def start_game():
         except ValueError:
             print ("Sorry, entry is not a valid number ")
             continue
-            
+
         else:
             scores.append(attempts)
             print("Got it. You had", attempts,"attempts")
@@ -48,7 +48,7 @@ while replay_game.upper() == "YES":
     replay_game = input ("Would you like to replay game: Yes / No    ")
 else:
     print("Good Game. Have a great Day!!!")
-        
+    
 
 
         
