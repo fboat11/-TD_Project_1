@@ -41,6 +41,14 @@ def start_game():
             break
 
 start_game()   
+replay_game = input ("Would you like to replay game: Yes / No    ")
+while replay_game.upper() == "YES":
+    start_game()
+    replay_game = input ("Would you like to replay game: Yes / No    ")
+else:
+    print("Good Game. Have a great Day!!!")
+        
+
 
     
   
