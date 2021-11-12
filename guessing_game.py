@@ -1,26 +1,26 @@
-"""
-Python Web Development Techdegree
-Project 1 - Number Guessing Game
---------------------------------
-
-For this first project we will be using Workspaces. 
-
-NOTE: If you strongly prefer to work locally on your own computer, you can totally do that by clicking: File -> Download Workspace in the file menu after you fork the snapshot of this workspace.
-
-"""
-
 import random
 
 print(" Welcome to the Number Guessing Game!!!  ")
 print("Guess a number between 1 and 20. Good luck!!!")
 
-solution = random.randrange(1, 20)
+
+scores = [20]
 
 def start_game():
+    solution = random.randrange(1, 21)
+    
     attempts = 1
+    high_score = 21 - min(scores)
+    print("High Score is  ", high_score, ", Higher is better" )
+   
+
+    
     while True:
         try:
             number_guessed = int(input("Please guess a number: "))
+            
+            if (1 <= number_guessed < 21):
+                print("")
             
             while  number_guessed != solution:
                 
@@ -36,6 +36,7 @@ def start_game():
             continue
             
         else:
+            scores.append(attempts)
             print("Got it. You had", attempts,"attempts")
             print("Thanks for playing")
             break
@@ -47,6 +48,9 @@ while replay_game.upper() == "YES":
     replay_game = input ("Would you like to replay game: Yes / No    ")
 else:
     print("Good Game. Have a great Day!!!")
+        
+
+
         
 
 
