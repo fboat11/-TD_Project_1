@@ -3,7 +3,6 @@ import random
 print(" Welcome to the Number Guessing Game!!!  ")
 print("Guess a number between 1 and 20. Good luck!!!")
 
-
 scores = [20]
 
 def start_game():
@@ -12,8 +11,6 @@ def start_game():
     attempts = 1
     high_score = 21 - min(scores)
     print("High Score is  ", high_score, ", Higher is better" )
-
-
 
     while True:
         try:
