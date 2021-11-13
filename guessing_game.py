@@ -18,14 +18,14 @@ def start_game():
 
             if  (1 <= number_guessed < 21):
                 
-                while  number_guessed != solution:
+                if  number_guessed != solution:
                     attempts += 1
                     if number_guessed > solution:
                         print("It's lower")
-                        number_guessed = int(input("Please guess another number: "))
+                        continue
                     else:
                         print("It's higher ")
-                        number_guessed = int(input("Please guess another number: "))
+                        continue
             else:
                 print("Number is out of range. Please enter a valid response")
                 continue
