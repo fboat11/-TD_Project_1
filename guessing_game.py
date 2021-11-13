@@ -16,18 +16,19 @@ def start_game():
         try:
             number_guessed = int(input("Please guess a number: "))
 
-            if (1 <= number_guessed < 21):
-                print("")
-
-            while  number_guessed != solution:
-
-                attempts += 1
-                if number_guessed > solution:
-                    print("It's lower")
-                    number_guessed = int(input("Please guess another number: "))
-                else:
-                    print("It's higher ")
-                    number_guessed = int(input("Please guess another number: "))
+            if  (1 <= number_guessed < 21):
+                
+                while  number_guessed != solution:
+                    attempts += 1
+                    if number_guessed > solution:
+                        print("It's lower")
+                        number_guessed = int(input("Please guess another number: "))
+                    else:
+                        print("It's higher ")
+                        number_guessed = int(input("Please guess another number: "))
+            else:
+                print("Number is out of range. Please enter a valid response")
+                continue
         except ValueError:
             print ("Sorry, entry is not a valid number ")
             continue
